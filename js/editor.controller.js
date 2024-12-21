@@ -43,3 +43,8 @@ function onAddTextLine (ev, txt = 'Add Text Here', size, color) {
     gCtx.fillText(txt, offsetX, offsetY)
     gCtx.strokeText(txt, offsetX, offsetY)
 }
+
+function onSetLineTxt (txt) {
+    setLineTxt(txt)
+    renderMeme()
+}

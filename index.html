@@ -7,9 +7,27 @@
     <title>Super-duper MEME generator</title>
 </head>
 <body>
-    <section>image-gallery</section>
-    <section class="meme-editor">
-        <canvas class='main-canvas' width="500" height="500" onclick="onAddTextLine(event)"></canvas>
+    
+    <section class="meme-gallery-page">
+        <main>
+            <section class="filter-search">
+                <div class="input-icon-container"></div>
+                <div class="key-words-container"></div>
+            </section>
+            <section class="memes-grid-container"></section>
+        </main>
+    </section>
+    
+    <section class="meme-editor-page">
+        <main>
+            <canvas class='main-canvas' width="500" height="500" onclick="onAddTextLine(event)"></canvas>
+            <section class="editor-tools">
+                <input type="text" class="meme-text-input" placeholder="Add Text Here" oninput="onSetLineTxt(this.value)">
+                <div class="input-editors-container"></div>
+                <div class="font-editors-container"></div>
+                <div class="save-container"></div>
+            </section>
+        </main>
     </section>
 
     <script src="js/services/meme.service.js"></script>
