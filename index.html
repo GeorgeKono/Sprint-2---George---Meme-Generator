@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>Super-duper MEME generator</title>
 </head>
 <body>
     <section>image-gallery</section>
-    <section>meme-editor</section>
+    <section class="meme-editor">
+        <canvas class='main-canvas' width="500" height="500" onclick="onAddTextLine(event)"></canvas>
+    </section>
+
+    <script src="js/services/meme.service.js"></script>
+    
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/editor.controller.js"></script>
+
+    <script src="js/saved.controller.js"></script>
 </body>
 </html>
