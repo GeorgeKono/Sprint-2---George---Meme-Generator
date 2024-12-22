@@ -20,9 +20,13 @@
     </header>
     <section class="meme-gallery-page">
         <main>
-            <section class="filter-search">
-                <div class="input-icon-container"></div>
-                <div class="key-words-container"></div>
+            <section class="filter-search flex">
+                <div class="input-icon-container flex-1">
+                    <input type="text" class="search-meme-input" placeholder="Search" oninput="onSearchMeme(this.value)">
+                </div>
+                <div class="key-words-container flex-1">
+                    <button>Happy</button>
+                </div>
             </section>
             <section class="memes-grid-container"></section>
         </main>
