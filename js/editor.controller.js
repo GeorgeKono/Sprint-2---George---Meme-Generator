@@ -10,6 +10,8 @@ function renderMeme() {
     gCtx = gElCanvas.getContext('2d')
     
     drawImg()
+    hideElement('.meme-gallery-page')
+    showElement('.meme-editor-page')
 
     console.log('hi')  
 }
@@ -45,4 +47,14 @@ function onAddTextLine (ev, txt = 'Add Text Here', size, color) {
 function onSetLineTxt (txt) {
     setLineTxt(txt)
     renderMeme()
+}
+
+function hideElement(selector) {
+    const el = document.querySelector(selector)
+    el.classList.add('hidden')
+}
+
+function showElement(selector) {
+    const el = document.querySelector(selector)
+    el.classList.remove('hidden')
 }

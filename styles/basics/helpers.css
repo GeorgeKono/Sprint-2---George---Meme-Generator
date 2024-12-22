@@ -20,3 +20,15 @@
     padding: 0;
     list-style-type: none
 }
+
+
+/* display helpers */
+
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+

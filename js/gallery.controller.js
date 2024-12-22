@@ -2,6 +2,10 @@
 
 function onInit() {
     renderGallery()
+
+    const elGallery = document.querySelector('.meme-gallery-page')
+    hideElement('.meme-editor-page')
+    showElement('.meme-gallery-page')
 }
 
 function renderGallery() {

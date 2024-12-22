@@ -11,7 +11,7 @@
         <div class="logo">George Meme Generator</div>
         <nav class="main-nav">
             <ul class="flex clean-list">
-                <li><a href="#">Gallery</a></li>
+                <li><button class="nav-button" onclick="onInit()">Gallery</button></li>
                 <li><a href="#">Saved</a></li>
                 <li><a href="#">Randomize</a></li>
                 <li><a href="#">About</a></li>
@@ -28,7 +28,7 @@
         </main>
     </section>
     
-    <section class="meme-editor-page">
+    <section class="meme-editor-page hidden">
         <main>
             <canvas class='main-canvas' width="500" height="500" onclick="onAddTextLine(event)"></canvas>
             <section class="editor-tools">
