@@ -1,13 +1,14 @@
 /* SETUP */
 
 /* BASICS */
-@import url('/styles/basics/base.css');
-@import url('/styles/basics/helpers.css');
-@import url('/styles/basics/layout.css');
+@import 'basics/base.css';
+@import 'basics/helpers.css';
+@import 'basics/layout.css';
 
 /* COMPONENTS */
-@import url('/styles/components/main-header.css');
-@import url('/styles/components/main-nav.css');
-@import url('/styles/components/filter-search.css');
+@import 'components/main-header.css';
+@import 'components/main-nav.css';
+@import 'components/filter-search.css';
+@import 'components/memes-grid-container.css';
 
 /* MQ */
