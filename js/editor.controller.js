@@ -49,6 +49,13 @@ function onSetLineTxt(txt) {
     renderMeme()
 }
 
+function onUpdateLineSize(direction) {
+    const line = meme.lines[0]
+
+    line.size += direction
+    renderMeme()
+}
+
 function onDownloadMeme(elLink) {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent

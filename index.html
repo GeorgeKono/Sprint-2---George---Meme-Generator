@@ -38,7 +38,10 @@
             <section class="editor-tools flex align-center space-evenly">
                 <input type="text" class="meme-text-input" placeholder="Add Text Here" oninput="onSetLineTxt(this.value)">
                 <div class="input-editors-container"></div>
-                <div class="font-editors-container"></div>
+                <div class="font-editors-container grid">
+                    <button class="btn-font" onclick="onUpdateLineSize(6)">A+</button>
+                    <button class="btn-font" onclick="onUpdateLineSize(-6)">A-</button>
+                </div>
                 <div class="save-container flex">
                     <a href="#" class="btn btn-download" onclick="onDownloadMeme(this)" download="my-new-meme.jpg">Download</a>
                 </div>

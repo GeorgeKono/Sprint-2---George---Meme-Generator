@@ -7,6 +7,21 @@
     border-radius: 1.875em;  
 }
 
+.font-editors-container {
+    grid-template-columns: repeat(5, 1fr);
+    background-color: RGBA(25.003509521484375,165.00137329101562,159.00146484375,1);
+    border-radius: 15px;
+    padding: 0.83em;
+}
+
+.font-editors-container .btn-font {
+    font-size: clamp(1vw, 1em, 3.5vw);
+    aspect-ratio: 1;
+    color: black;
+    /* border: none; */
+    border-radius: 10px;
+}
+
 .save-container {
     display: flex;
     gap: 10px;
