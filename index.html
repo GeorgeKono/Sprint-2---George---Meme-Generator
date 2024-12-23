@@ -32,14 +32,16 @@
         </main>
     </section>
     
-    <section class="meme-editor-page hidden">
+    <section class="meme-editor-page hidden flex align-center space-evenly">
         <main>
             <canvas class='main-canvas' width="500" height="500" onclick="onAddTextLine(event)"></canvas>
-            <section class="editor-tools">
+            <section class="editor-tools flex align-center space-evenly">
                 <input type="text" class="meme-text-input" placeholder="Add Text Here" oninput="onSetLineTxt(this.value)">
                 <div class="input-editors-container"></div>
                 <div class="font-editors-container"></div>
-                <div class="save-container"></div>
+                <div class="save-container flex">
+                    <a href="#" class="btn btn-download" onclick="onDownloadMeme(this)" download="my-new-meme.jpg">Download</a>
+                </div>
             </section>
         </main>
     </section>

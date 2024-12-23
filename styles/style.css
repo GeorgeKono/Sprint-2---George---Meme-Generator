@@ -8,7 +8,12 @@
 /* COMPONENTS */
 @import 'components/main-header.css';
 @import 'components/main-nav.css';
-@import 'components/filter-search.css';
-@import 'components/memes-grid-container.css';
+
+/* COMPONENTS - GALLERY PAGE */
+@import 'components/gallery-page/filter-search.css';
+@import 'components/gallery-page/memes-grid-container.css';
+
+/* COMPONENTS - EDITOR PAGE */
+@import 'components/editor-page/editor-tools.css'
 
 /* MQ */

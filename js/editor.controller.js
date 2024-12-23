@@ -31,7 +31,7 @@ function drawImg() {
     }
 }
 
-function onAddTextLine (ev, txt = 'Add Text Here', size, color) {
+function onAddTextLine(ev, txt = 'Add Text Here', size, color) {
     const { offsetX, offsetY } = ev
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'black'
@@ -44,9 +44,14 @@ function onAddTextLine (ev, txt = 'Add Text Here', size, color) {
     gCtx.strokeText(txt, offsetX, offsetY)
 }
 
-function onSetLineTxt (txt) {
+function onSetLineTxt(txt) {
     setLineTxt(txt)
     renderMeme()
+}
+
+function onDownloadMeme(elLink) {
+    const imgContent = gElCanvas.toDataURL('image/jpeg')
+    elLink.href = imgContent
 }
 
 function hideElement(selector) {
