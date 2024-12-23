@@ -56,6 +56,13 @@ function onUpdateLineSize(direction) {
     renderMeme()
 }
 
+function onSetFillStyle(pickedColor) {
+    const line = meme.lines[0]
+
+    line.color = pickedColor
+    renderMeme()
+}
+
 function onDownloadMeme(elLink) {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
