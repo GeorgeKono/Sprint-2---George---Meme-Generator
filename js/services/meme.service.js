@@ -10,7 +10,9 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I sometimes eat Falafel',
+            txt: 'Add Text Here',
+            x: gElCanvas.width / 2,
+            y: gElCanvas / 5,
             size: 50,
             color: 'white',
         }
@@ -29,4 +31,15 @@ function setLineTxt(txt) {
 
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
+}
+
+function addNewLine() {
+    const newLine = {
+        txt: 'Add Text Here',
+        x: gElCanvas.width / 2,
+        y: (gMeme.lines.length +1) * 50,
+        size: 50,
+        color: 'white',
+    }
+    gMeme.lines.push(newLine)
 }

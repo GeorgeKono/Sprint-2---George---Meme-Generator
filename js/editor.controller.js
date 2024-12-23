@@ -10,6 +10,11 @@ function renderMeme() {
     gCtx = gElCanvas.getContext('2d')
     
     drawImg()
+    
+    gMeme.lines.forEach(line => {
+        drawText(line.txt, line.x, line.y, line.size, line.color)
+    })
+
     hideElement('.meme-gallery-page')
     showElement('.meme-editor-page')
 
@@ -22,17 +27,10 @@ function drawImg() {
     
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        onAddTextLine( 
-            { offsetX: gElCanvas.width / 2, offsetY: gElCanvas.height / 5 },
-            meme.lines[0].txt,
-            meme.lines[0].size,
-            meme.lines[0].color
-         )
     }
 }
 
-function onAddTextLine(ev, txt = 'Add Text Here', size, color) {
-    const { offsetX, offsetY } = ev
+function drawText(txt = 'Add Text Here', x, y, size, color) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'black'
     gCtx.fillStyle = color
@@ -40,8 +38,18 @@ function onAddTextLine(ev, txt = 'Add Text Here', size, color) {
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
-    gCtx.fillText(txt, offsetX, offsetY)
-    gCtx.strokeText(txt, offsetX, offsetY)
+    gCtx.fillText(txt, x, y)
+    gCtx.strokeText(txt, x, y)
+}
+
+function onAddNewLine() {
+    addNewLine()
+    renderMeme()
+}
+
+function onClickAddNewLine(ev) {
+    const { offsetX, offsetY } = ev
+    addNewLine()
 }
 
 function onSetLineTxt(txt) {
