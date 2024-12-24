@@ -39,13 +39,13 @@
                 <input type="text" class="meme-text-input" placeholder="Add Text Here" oninput="onSetLineTxt(this.value)">
                 <div class="input-editors-container">
                     <button class="btn-editor btn-switch-inputs" onclick="onSwitchLine()">Switch Line</button>
-                    <button class="btn-editor btn-add-input" onclick="onAddLine()">Add Line</button>
+                    <button class="btn-editor btn-add-input" onclick="onAddNewLine()">Add Line</button>
                 </div>
                 <div class="font-editors-container grid">
                     <button class="btn-font" onclick="onUpdateLineSize(6)">A+</button>
                     <button class="btn-font" onclick="onUpdateLineSize(-6)">A-</button>
                     <button class="btn-font">
-                        <input type="color" oninput="onSetFillStyle(this.value)">
+                        <input type="color" class="fill-color-input btn-font" oninput="onSetFillStyle(this.value)">
                     </button>
                 </div>
                 <div class="save-container flex">

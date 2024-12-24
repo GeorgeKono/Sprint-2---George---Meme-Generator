@@ -45,6 +45,7 @@ function drawText(txt = 'Add Text Here', x, y, size, color) {
 
 function onAddNewLine() {
     addNewLine()
+    updateEditorInputs()
     renderMeme()
 }
 
@@ -55,6 +56,12 @@ function onClickAddNewLine(ev) {
 
 function onSetLineTxt(txt) {
     setLineTxt(txt)
+    renderMeme()
+}
+
+function onSwitchLine() {
+    switchLine()
+    updateEditorInputs()    
     renderMeme()
 }
 
@@ -81,4 +88,15 @@ function hideElement(selector) {
 function showElement(selector) {
     const el = document.querySelector(selector)
     el.classList.remove('hidden')
+}
+
+function updateEditorInputs() {
+    const idx = gMeme.selectedLineIdx
+    const selectedLine = gMeme.lines[idx]
+
+    const elTextInput = document.querySelector('.meme-text-input')
+    elTextInput.value = selectedLine.txt
+
+    const elColorInput = document.querySelector('.fill-color-input')
+    elColorInput.value = selectedLine.color
 }

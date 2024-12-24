@@ -30,6 +30,17 @@ function setLineTxt(txt) {
     gMeme.lines[idx].txt = txt 
 }
 
+function switchLine() {
+    let idx = +gMeme.selectedLineIdx
+    idx++    
+    
+    if (idx > gMeme.lines.length - 1) {
+        gMeme.selectedLineIdx = 0
+    } else {
+        gMeme.selectedLineIdx = idx
+    }
+}
+
 function updateLineSize(direction) {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
