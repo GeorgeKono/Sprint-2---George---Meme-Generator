@@ -3,17 +3,11 @@
 let gElCanvas
 let gCtx
 
-const meme = getMeme()
-
 function renderMeme() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     
     drawImg()
-    
-    gMeme.lines.forEach(line => {
-        drawText(line.txt, line.x, line.y, line.size, line.color)
-    })
 
     hideElement('.meme-gallery-page')
     showElement('.meme-editor-page')
@@ -23,10 +17,17 @@ function renderMeme() {
 
 function drawImg() {
     const elImg = new Image()
-    elImg.src = `img/${meme.selectedImgId}.jpg`
+    elImg.src = `img/${gMeme.selectedImgId}.jpg`
     
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+        
+        gMeme.lines.forEach((line, idx) => {
+            line.x = gElCanvas.width / 2,
+            line.y = (idx + 1) * 100,
+    
+            drawText(line.txt, line.x, line.y, line.size, line.color)
+        })
     }
 }
 
@@ -58,16 +59,12 @@ function onSetLineTxt(txt) {
 }
 
 function onUpdateLineSize(direction) {
-    const line = meme.lines[0]
-
-    line.size += direction
+    updateLineSize(direction)
     renderMeme()
 }
 
 function onSetFillStyle(pickedColor) {
-    const line = meme.lines[0]
-
-    line.color = pickedColor
+    setFillStyle(pickedColor)
     renderMeme()
 }
 

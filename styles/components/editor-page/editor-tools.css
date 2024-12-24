@@ -3,22 +3,41 @@
     gap: 20px;
     font-size: 1.5rem;
     flex-direction: column;
+    width: 100%;
     background-color: #383b42;
     border-radius: 1.875em;  
 }
 
+.editor-tools .btn-editor {
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.editor-tools .btn-add-input {
+    background-image: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+    box-shadow: 1px 5px 0 #015d33, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+}
+
+.editor-tools .btn-switch-inputs {
+	background-image: linear-gradient(-38deg, #66c4dc 0%, #0c98bb 100%);
+	box-shadow: 1px 5px 0 #048b97, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+}
+
 .font-editors-container {
+    gap: 0.1em;
     grid-template-columns: repeat(5, 1fr);
     background-color: RGBA(25.003509521484375,165.00137329101562,159.00146484375,1);
     border-radius: 15px;
     padding: 0.83em;
+    width: 100%;
 }
 
 .font-editors-container .btn-font {
     font-size: clamp(1vw, 1em, 3.5vw);
     aspect-ratio: 1;
     color: black;
-    /* border: none; */
+    border: none;
     border-radius: 10px;
 }
 

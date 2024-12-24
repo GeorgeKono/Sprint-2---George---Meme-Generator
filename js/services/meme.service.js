@@ -11,8 +11,8 @@ var gMeme = {
     lines: [
         {
             txt: 'Add Text Here',
-            x: gElCanvas.width / 2,
-            y: gElCanvas / 5,
+            x: 0,
+            y: 0,
             size: 50,
             color: 'white',
         }
@@ -26,7 +26,22 @@ function getMeme() {
 }
 
 function setLineTxt(txt) {
-    gMeme.lines[0].txt = txt 
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].txt = txt 
+}
+
+function updateLineSize(direction) {
+    const idx = gMeme.selectedLineIdx
+    const line = gMeme.lines[idx]
+
+    line.size += direction
+}
+
+function setFillStyle(pickedColor) {
+    const idx = gMeme.selectedLineIdx
+    const line = gMeme.lines[idx]
+
+    line.color = pickedColor
 }
 
 function setImg(imgId) {
@@ -36,10 +51,11 @@ function setImg(imgId) {
 function addNewLine() {
     const newLine = {
         txt: 'Add Text Here',
-        x: gElCanvas.width / 2,
-        y: (gMeme.lines.length +1) * 50,
+        x: 0,
+        y: 0,
         size: 50,
         color: 'white',
     }
     gMeme.lines.push(newLine)
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
