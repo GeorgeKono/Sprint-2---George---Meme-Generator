@@ -23,8 +23,8 @@ function drawImg() {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         
         gMeme.lines.forEach((line, idx) => {
-            line.x = gElCanvas.width / 2,
-            line.y = (idx + 1) * 100,
+            line.x = gElCanvas.width / 2;
+            line.y = (idx + 1) * 100;
     
             drawText(line.txt, line.x, line.y, line.size, line.color)
 
@@ -62,16 +62,30 @@ function drawLineFrame(selectedLine) {
     )
 }
 
+function onCanvasLineSelect(ev) {
+    const { offsetX, offsetY } = ev
+    
+    const clickedLineIdx = gMeme.lines.findIndex(line => {
+        const textWidth = gCtx.measureText(line.txt).width
+        const textHeight = line.size
+        const isXinside = offsetX >= line.x - textWidth / 2 && offsetX <= line.x + textWidth / 2
+        const isYinside = offsetY >= line.y - textHeight / 2 && offsetY <= line.y + textHeight / 2
+        return isXinside && isYinside
+    })
+
+    if (clickedLineIdx !== -1) {
+        gMeme.selectedLineIdx = clickedLineIdx
+        updateEditorInputs()
+        renderMeme()
+    }
+}   
+
 function onAddNewLine() {
     addNewLine()
     updateEditorInputs()
     renderMeme()
 }
 
-function onClickAddNewLine(ev) {
-    const { offsetX, offsetY } = ev
-    addNewLine()
-}
 
 function onSetLineTxt(txt) {
     setLineTxt(txt)
