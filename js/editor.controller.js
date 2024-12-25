@@ -27,6 +27,10 @@ function drawImg() {
             line.y = (idx + 1) * 100,
     
             drawText(line.txt, line.x, line.y, line.size, line.color)
+
+            if (idx === gMeme.selectedLineIdx) {
+                drawLineFrame(line)
+            }
         })
     }
 }
@@ -41,6 +45,21 @@ function drawText(txt = 'Add Text Here', x, y, size, color) {
 
     gCtx.fillText(txt, x, y)
     gCtx.strokeText(txt, x, y)
+}
+
+function drawLineFrame(selectedLine) {
+    const padding = 10
+    const textWidth = gCtx.measureText(selectedLine.txt).width
+    const textHeight = selectedLine.size
+
+    gCtx.strokeStyle = 'blue'
+    gCtx.lineWidth = 2
+    gCtx.strokeRect(
+        selectedLine.x - textWidth / 2 - padding,
+        selectedLine.y - textHeight / 2 - padding,
+        textWidth + padding * 2,
+        textHeight + padding * 2
+    )
 }
 
 function onAddNewLine() {
