@@ -2,9 +2,14 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: poppins, sans-serif;
+    font-weight: 500;
+}
+
 body {
-    text-align: center;
     margin: 0;
+    background-color: var(--clr-primary);
 }
 
 canvas {

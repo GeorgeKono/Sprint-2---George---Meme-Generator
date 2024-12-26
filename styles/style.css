@@ -1,4 +1,6 @@
 /* SETUP */
+@import 'setup/typography.css';
+@import 'setup/vars.css';
 
 /* BASICS */
 @import 'basics/base.css';
@@ -7,6 +9,7 @@
 
 /* COMPONENTS */
 @import 'components/main-header.css';
+@import 'components/main-logo.css';
 @import 'components/main-nav.css';
 
 /* COMPONENTS - GALLERY PAGE */
@@ -14,6 +17,6 @@
 @import 'components/gallery-page/memes-grid-container.css';
 
 /* COMPONENTS - EDITOR PAGE */
-@import 'components/editor-page/editor-tools.css'
+@import 'components/editor-page/editor-tools.css';
 
 /* MQ */

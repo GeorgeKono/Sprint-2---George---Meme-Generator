@@ -8,6 +8,10 @@
     minmax(20px, 1fr)
 }
 
-.main-layout > * {
+.main-layout > *:not(.full) {
     grid-column: 2;
+}
+
+.main-layout > *.full {
+    grid-column: 1 / -1;
 }
