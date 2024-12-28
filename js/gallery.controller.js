@@ -1,5 +1,7 @@
 'use strict'
 
+var filteredImgs
+
 function onInit() {
     renderGallery()
 
@@ -8,10 +10,10 @@ function onInit() {
     showElement('.meme-gallery-page')
 }
 
-function renderGallery() {
+function renderGallery(imgs = gImgs) {
     const elMemesGallery = document.querySelector('.memes-grid-container')
 
-    const strHtmls = gImgs.map(img => 
+    const strHtmls = imgs.map(img => 
         `<img src="${img.url}" data-id="${img.id}" onclick=onImgSelect(this)></img>`
     )
 
@@ -22,4 +24,9 @@ function onImgSelect(img) {
     const imgId = +img.dataset.id
     setImg(imgId)
     renderMeme()
+}
+
+function onSearchMeme(searchTerm) {
+    filteredImgs = searchMeme(searchTerm)
+    renderGallery(filteredImgs)
 }

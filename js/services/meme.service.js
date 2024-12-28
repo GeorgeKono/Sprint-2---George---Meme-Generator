@@ -86,3 +86,13 @@ function addNewLine() {
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
+
+function searchMeme(searchTerm) {
+    searchTerm = searchTerm.toLowerCase()
+    
+    const filteredImgs = gImgs.filter(img => 
+        img.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))
+    )
+
+    return filteredImgs
+}
