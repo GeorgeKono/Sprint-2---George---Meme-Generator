@@ -9,7 +9,7 @@ html {
 
 body {
     margin: 0;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-primary-1);
 }
 
 canvas {

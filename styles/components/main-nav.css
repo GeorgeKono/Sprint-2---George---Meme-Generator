@@ -1,3 +1,12 @@
+.main-nav {
+    padding-inline-end: 20px;
+}
+
 .main-nav ul {
     gap: 63px;
+}
+
+.main-nav ul a {
+    color: white;
+    text-decoration: none;
 }

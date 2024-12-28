@@ -13,6 +13,7 @@
 @import 'components/main-nav.css';
 
 /* COMPONENTS - GALLERY PAGE */
+@import 'components/gallery-page/meme-gallery-page.css';
 @import 'components/gallery-page/filter-search.css';
 @import 'components/gallery-page/memes-grid-container.css';
 

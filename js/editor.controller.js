@@ -78,7 +78,7 @@ function onCanvasLineSelect(ev) {
         updateEditorInputs()
         renderMeme()
     }
-}   
+}
 
 function onAddNewLine() {
     addNewLine()
